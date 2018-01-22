@@ -1,0 +1,4 @@
+COLORI:
+verdino base: #73B3B3
+verdino scurino barra alta: #0C5656
+verdino altro: #156A6A
