@@ -99,10 +99,14 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void onClick(View view){
+    public void onClick1(View view){
         Intent intent = new  Intent(getBaseContext(), Turni.class);
         startActivity(intent);
     }
 
+    public void onClick2(View view){
+        Intent intent = new  Intent(getBaseContext(), Utenze.class);
+        startActivity(intent);
+    }
 
 }
