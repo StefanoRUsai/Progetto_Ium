@@ -29,4 +29,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
 
+    implementation 'com.google.android.gms:play-services-ads:11.8.0'
 }

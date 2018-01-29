@@ -12,18 +12,21 @@
         <activity
             android:name=".activity.MainActivity"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.Turni"
+            android:label="Turni" />
+        <activity
+            android:name=".activity.Utenze"
+            android:label="Utenze" />
+        <activity android:name=".activity.SpashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.Turni"
-            android:label="Turni" />
-        <activity android:name=".activity.Utenze"
-            android:label="Utenze"/>
+        <activity android:name=".activity.UtenzeText"></activity>
     </application>
 
 </manifest>

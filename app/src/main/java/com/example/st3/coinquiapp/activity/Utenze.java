@@ -1,26 +1,33 @@
 package com.example.st3.coinquiapp.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toolbar;
 
 import com.example.st3.coinquiapp.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import static android.location.Location.convert;
 
 public class Utenze extends AppCompatActivity {
 
 
-    private ListView listView ;
+    private ListView listView;
     private ArrayAdapter<String> listAdapter;
+    private HashMap<String, String> stringHashMap= new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +36,37 @@ public class Utenze extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        listView = (ListView) findViewById( R.id.listViewUtenze );
-
-        String[] arrayUtenze = new String[] { "Luce", "Gas", "Acqua", "Telefono"};
-        ArrayList<String> utenzeList = new ArrayList<>();
-        utenzeList.addAll( Arrays.asList(arrayUtenze));
-
-        listAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, utenzeList);
-
-        listView.setAdapter( listAdapter );
-
         // add back arrow to toolbar
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+        listView = (ListView) findViewById(R.id.listViewUtenze);
+
+        stringHashMap.put("Luce", "15/01/2018");
+        stringHashMap.put("Gas", "18/01/2018");
+        stringHashMap.put("Acqua", "22/03/2018");
+        stringHashMap.put("Telefono", "13/02/2018");
+
+
+        List<HashMap<String, String>> listItems = new ArrayList<>();
+        SimpleAdapter adapter= new SimpleAdapter(this, listItems, R.layout.list_item,
+                new String[] {"First", "Second"},
+                new int[] {R.id.row1, R.id.row2});
+
+        Iterator it = stringHashMap.entrySet().iterator();
+        while (it.hasNext()){
+
+            HashMap<String,String> resultsMap = new HashMap<>();
+            Map.Entry pair=(Map.Entry)it.next();
+            resultsMap.put("First", pair.getKey().toString());
+            resultsMap.put("Second", pair.getKey().toString());
+            listItems.add(resultsMap);
+        }
+
+
+    listView.setAdapter(adapter);
 
 
     }
@@ -76,5 +98,10 @@ public class Utenze extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick3(View view){
+        Intent intent = new  Intent(getBaseContext(), UtenzeText.class);
+        startActivity(intent);
     }
 }
