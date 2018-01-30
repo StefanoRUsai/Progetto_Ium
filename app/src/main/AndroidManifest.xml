@@ -19,7 +19,9 @@
         <activity
             android:name=".activity.Utenze"
             android:label="Utenze" />
-        <activity android:name=".activity.SpashScreen">
+        <activity android:name=".activity.SpashScreen"
+
+            android:theme="@style/Theme.Design.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
