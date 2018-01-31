@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,15 +8,15 @@
     tools:context="com.example.st3.coinquiapp.activity.SpashScreen">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="257dp"
-        android:layout_height="66dp"
-        android:contentDescription="@string/todo"
+        android:id="@+id/imageView6"
+        android:layout_width="355dp"
+        android:layout_height="339dp"
+        android:contentDescription="@string/splash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.458"
-        app:srcCompat="@mipmap/coinquiapp23" />
+        app:layout_constraintVertical_bias="0.319"
+        app:srcCompat="@mipmap/provaopaco" />
 </android.support.constraint.ConstraintLayout>
