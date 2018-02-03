@@ -19,6 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".spese_personali"
+            android:label="Spese Personali"></activity>
     </application>
 
 </manifest>

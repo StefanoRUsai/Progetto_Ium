@@ -1,5 +1,6 @@
 package com.example.st3.coinquiapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -97,5 +98,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void onClick(View view){
+        Intent intent = new Intent(getBaseContext(), spese_personali.class);
+        startActivity(intent);
     }
 }
