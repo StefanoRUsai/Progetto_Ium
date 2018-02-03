@@ -6,18 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.st3.coinquiapp.activity.UtenzeText">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="300dp"
+    <ImageView
+        android:id="@+id/immaginiutenza"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="110dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="353dp"
-        android:text="@string/button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="239dp" />
 </android.support.constraint.ConstraintLayout>

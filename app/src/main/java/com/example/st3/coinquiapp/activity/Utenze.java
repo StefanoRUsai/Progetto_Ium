@@ -1,12 +1,17 @@
 package com.example.st3.coinquiapp.activity;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toolbar;
@@ -65,9 +70,32 @@ public class Utenze extends AppCompatActivity {
             listItems.add(resultsMap);
         }
 
+    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            Intent intent = new  Intent(Utenze.this, UtenzeText.class);
+            intent.putExtra("immagineUtenza", listView.getItemAtPosition(i).toString());
+            startActivity(intent);
+        }
+    });
+        listView.setAdapter(adapter);
 
-    listView.setAdapter(adapter);
 
+        FloatingActionButton mShowDialog = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+            mShowDialog.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(Utenze.this);
+                    View mView = getLayoutInflater().inflate(R.layout.utenze_dialog, null);
+                    EditText mutenza = (EditText) findViewById(R.id.utenza);
+                    EditText data = (EditText) findViewById(R.id.data);
+                    Button mButton = (Button) findViewById(R.id.aggiungi_utenza);
+
+                    mBuilder.setView(mView);
+                    AlertDialog dialog = mBuilder.create();
+                    dialog.show();
+                }
+            });
 
     }
 

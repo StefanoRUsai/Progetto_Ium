@@ -1,9 +1,12 @@
 package com.example.st3.coinquiapp.activity;
 
+import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.example.st3.coinquiapp.R;
@@ -22,6 +25,9 @@ public class UtenzeText extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+        ImageView imageUtenze= (ImageView) findViewById(R.id.immaginiutenza);
+        Bundle bundle = getIntent().getExtras();
+        imageUtenze.setImageDrawable(ContextCompat.getDrawable(UtenzeText.this, R.drawable.utenza));
     }
 
     private void setSupportActionBar(Toolbar toolbar) {
