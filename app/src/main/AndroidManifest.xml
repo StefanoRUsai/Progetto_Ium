@@ -16,6 +16,10 @@
         <activity
             android:name=".activity.Turni"
             android:label="Turni" />
+
+        <activity
+            android:name=".activity.SpesePersonali"
+            android:label="Spese personali" />
         <activity
             android:name=".activity.Utenze"
             android:label="Utenze" />

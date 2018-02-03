@@ -29,6 +29,10 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="CalenderViewMont" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 
 
 

@@ -14,6 +14,8 @@
     <string name="aggiungi_un_turno">Aggiungi un Turno</string>
     <string name="addText">AddText</string>
     <string name="splash">TODO</string>
+    <string name="Campicompleti">Campi Completo</string>
+    <string name="campinoncompleti">I campi sono ancora vuoti</string>
 
 
 </resources>

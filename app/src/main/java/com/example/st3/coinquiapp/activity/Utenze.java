@@ -66,36 +66,36 @@ public class Utenze extends AppCompatActivity {
             HashMap<String,String> resultsMap = new HashMap<>();
             Map.Entry pair=(Map.Entry)it.next();
             resultsMap.put("First", pair.getKey().toString());
-            resultsMap.put("Second", pair.getKey().toString());
+            resultsMap.put("Second", pair.getValue().toString());
             listItems.add(resultsMap);
         }
 
-    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            Intent intent = new  Intent(Utenze.this, UtenzeText.class);
-            intent.putExtra("immagineUtenza", listView.getItemAtPosition(i).toString());
-            startActivity(intent);
-        }
-    });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new  Intent(Utenze.this, UtenzeText.class);
+                intent.putExtra("immagineUtenza", listView.getItemAtPosition(i).toString());
+                startActivity(intent);
+            }
+        });
         listView.setAdapter(adapter);
 
 
         FloatingActionButton mShowDialog = (FloatingActionButton) findViewById(R.id.floatingActionButton);
-            mShowDialog.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(Utenze.this);
-                    View mView = getLayoutInflater().inflate(R.layout.utenze_dialog, null);
-                    EditText mutenza = (EditText) findViewById(R.id.utenza);
-                    EditText data = (EditText) findViewById(R.id.data);
-                    Button mButton = (Button) findViewById(R.id.aggiungi_utenza);
+        mShowDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(Utenze.this);
+                View mView = getLayoutInflater().inflate(R.layout.utenze_dialog, null);
+                EditText mutenza = (EditText) findViewById(R.id.utenza);
+                EditText data = (EditText) findViewById(R.id.data);
+                Button mButton = (Button) findViewById(R.id.aggiungi_utenza);
 
-                    mBuilder.setView(mView);
-                    AlertDialog dialog = mBuilder.create();
-                    dialog.show();
-                }
-            });
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
+            }
+        });
 
     }
 

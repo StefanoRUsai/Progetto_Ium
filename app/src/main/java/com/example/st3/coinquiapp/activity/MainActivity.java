@@ -109,4 +109,9 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void onClick3(View view){
+        Intent intent = new  Intent(getBaseContext(), SpesePersonali.class);
+        startActivity(intent);
+    }
+
 }
