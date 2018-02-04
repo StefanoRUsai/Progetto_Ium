@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="prova">#a91a1a</color>
-    <color name="white">#ffff</color>
-    <color name="grey">#8492A6</color>
-    <color name="black">#111</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#8492a6</color>
+    <color name="black">#111111</color>
 </resources>

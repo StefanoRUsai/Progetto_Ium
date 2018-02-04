@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.example.st3.coinquiapp.R;
@@ -87,9 +88,25 @@ public class Utenze extends AppCompatActivity {
             public void onClick(View view) {
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(Utenze.this);
                 View mView = getLayoutInflater().inflate(R.layout.utenze_dialog, null);
-                EditText mutenza = (EditText) findViewById(R.id.utenza);
-                EditText data = (EditText) findViewById(R.id.data);
-                Button mButton = (Button) findViewById(R.id.aggiungi_utenza);
+                final EditText mUtenza = (EditText) mView.findViewById(R.id.utenza);
+                final EditText mData = (EditText) mView.findViewById(R.id.data);
+                Button mButton = (Button) mView.findViewById(R.id.aggiungi_utenza);
+
+
+                mButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(!mUtenza.getText().toString().isEmpty() && !mData.getText().toString().isEmpty()){
+                            Toast.makeText(Utenze.this, R.string.check_aggiunto, Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(Utenze.this, R.string.error_campi, Toast.LENGTH_SHORT).show();
+                        }
+
+                        Intent intent = new  Intent(view.getContext(), Utenze.class);
+                        startActivity(intent);
+
+                    }
+                });
 
                 mBuilder.setView(mView);
                 AlertDialog dialog = mBuilder.create();

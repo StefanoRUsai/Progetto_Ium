@@ -16,6 +16,8 @@
     <string name="splash">TODO</string>
     <string name="Campicompleti">Campi Completo</string>
     <string name="campinoncompleti">I campi sono ancora vuoti</string>
+    <string name="error_campi">Devi compilare i campi</string>
+    <string name="check_aggiunto">Aggiunto</string>
 
 
 </resources>
