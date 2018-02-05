@@ -33,7 +33,7 @@ public class Utenze extends AppCompatActivity {
 
     private ListView listView;
     private ArrayAdapter<String> listAdapter;
-    private HashMap<String, String> stringHashMap= new HashMap<>();
+    private static  HashMap<String, String> stringHashMap= new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +77,9 @@ public class Utenze extends AppCompatActivity {
                 Intent intent = new  Intent(Utenze.this, UtenzeText.class);
                 intent.putExtra("immagineUtenza", listView.getItemAtPosition(i).toString());
                 startActivity(intent);
+
+
+
             }
         });
         listView.setAdapter(adapter);

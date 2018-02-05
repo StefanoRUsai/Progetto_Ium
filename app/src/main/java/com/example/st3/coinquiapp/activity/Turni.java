@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -26,7 +27,7 @@ public class Turni extends AppCompatActivity {
 
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
-
+    TextView mese;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,10 @@ public class Turni extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mese = (TextView) findViewById(R.id.textView3);
+        String meseAttuale = dateFormatMonth.format(new Date());
+        mese.setText(meseAttuale);
 
         FloatingActionButton mShowDialog = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
         mShowDialog.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +115,29 @@ public class Turni extends AppCompatActivity {
                                 Toast.makeText(context, "Turno cucina Giorgia", Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(context, "Non ci sono turni in questo momento", Toast.LENGTH_SHORT).show();
+                                AlertDialog.Builder mBuilder = new AlertDialog.Builder(Turni.this);
+                                View mView = getLayoutInflater().inflate(R.layout.turni_dialog, null);
+                                final EditText mTurno = (EditText) mView.findViewById(R.id.turno);
+                                final EditText mData = (EditText) mView.findViewById(R.id.data_turno);
+                                Button mButton = (Button) mView.findViewById(R.id.aggiungi_turno);
 
+
+                                mButton.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        if(!mTurno.getText().toString().isEmpty() && !mData.getText().toString().isEmpty()){
+                                            Toast.makeText(Turni.this, R.string.check_aggiunto, Toast.LENGTH_SHORT).show();
+                                        }else{
+                                            Toast.makeText(Turni.this, R.string.error_campi, Toast.LENGTH_SHORT).show();
+                                        }
+                                        Intent intent = new  Intent(view.getContext(), Turni.class);
+                                        startActivity(intent);
+                                    }
+                                });
+
+                                mBuilder.setView(mView);
+                                AlertDialog dialog = mBuilder.create();
+                                dialog.show();
                             }
                         }
                     }
@@ -118,7 +145,7 @@ public class Turni extends AppCompatActivity {
             }
                 @Override
                 public void onMonthScroll (Date firstDayOfNewMonth){
-
+                    mese.setText(dateFormatMonth.format(firstDayOfNewMonth));
                 }
 
 
