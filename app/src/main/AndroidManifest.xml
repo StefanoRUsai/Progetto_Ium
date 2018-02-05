@@ -28,6 +28,28 @@
             android:name=".activity.Utenze"
             android:label="Utenze"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.Registrazione"
+            android:label="Registrazione" />
+        <activity
+            android:name=".activity.ChoiseGroupHome"
+            android:label="Gruppo-Casa" />
+        <activity
+            android:name=".activity.CreateNewGroupHome"
+            android:label="Crea nuovo Gruppo-Casa">
+
+        </activity>
+
+        <activity
+            android:name=".activity.Login_principale"
+            android:label=""
+            android:src="@mipmap/logo"
+            android:windowSoftInputMode="stateHidden">
+
+
+        </activity>
+
+
         <activity android:name=".activity.SpashScreen"
 
             android:theme="@style/Theme.Design.NoActionBar"

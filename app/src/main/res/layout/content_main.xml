@@ -11,47 +11,109 @@
 
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="88dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginTop="319dp"
-        android:onClick="onClick1"
-        android:text="Turni"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        android:id="@+id/buttonBacheca"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:text="BACHECA"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSpese"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTurni"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginEnd="89dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="319dp"
-        android:onClick="onClick2"
-        android:text="Utenze"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        android:id="@+id/buttonTurni"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:onClick="onClick1"
+        android:text="TURNI"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/buttonUtenze"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/buttonBacheca"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="46dp"
-        android:layout_marginEnd="107dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginTop="50dp"
+        android:id="@+id/buttonSpese"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
         android:onClick="onClick3"
-        android:text="Spese prova unione"
+        android:text="SPESE"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonUtenze"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBacheca" />
+
+    <Button
+        android:id="@+id/buttonUtenze"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:onClick="onClick2"
+        android:text="UTENZE"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+        app:layout_constraintStart_toEndOf="@+id/buttonSpese"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTurni" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/personal_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/NomeCasa"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/userPic"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/userPic"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@id/personal_area"
+            app:srcCompat="@drawable/circle" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

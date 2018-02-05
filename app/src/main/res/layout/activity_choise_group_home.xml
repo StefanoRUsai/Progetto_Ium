@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context="com.example.st3.coinquiapp.activity.ChoiseGroupHome">
+
+    <TextView
+        android:id="@+id/textCercaGruppocASA"
+        style="@style/TextAppearance.AppCompat"
+        android:layout_width="366dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Cerca il tuo gruppo casa:"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/searchGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchGroup"
+        android:layout_width="368dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimaryLight"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCercaGruppocASA" />
+
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="368dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:hint="Password per poter entrare nel gruppo casa"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/buttonWelcomeToHouse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchGroup" />
+
+    <Button
+        android:id="@+id/buttonWelcomeToHouse"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="368dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="#73B3B3"
+        android:onClick="onClick7"
+        android:text="Entra nel tuo gruppo-casa!"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <TextView
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginBottom="37dp"
+        android:layout_marginTop="37dp"
+        android:text="Or"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreateNewGroupHome"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonWelcomeToHouse" />
+
+    <Button
+        android:id="@+id/buttonCreateNewGroupHome"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="368dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="67dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="37dp"
+        android:background="#73B3B3"
+        android:onClick="onClick6"
+        android:text="Crea un nuovo gruppo casa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+
+</android.support.constraint.ConstraintLayout>

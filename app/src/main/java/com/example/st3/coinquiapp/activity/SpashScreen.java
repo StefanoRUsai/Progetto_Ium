@@ -19,7 +19,7 @@ public class SpashScreen extends AppCompatActivity {
             @Override
             public void run()
             {
-                Intent i = new Intent(SpashScreen.this, MainActivity.class);
+                Intent i = new Intent(SpashScreen.this, Login_principale.class);
                 startActivity(i);
                 finish();
             }

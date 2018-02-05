@@ -18,6 +18,21 @@
     <string name="campinoncompleti">I campi sono ancora vuoti</string>
     <string name="error_campi">Devi compilare i campi</string>
     <string name="check_aggiunto">Aggiunto</string>
+    <string name="title_activity_registration">Registration</string>
+    <string name="title_activity_login2">Login2</string>
+    <string name="nome">Nome</string>
+    <string name="cognome">Cognome</string>
+    <string name="password">Password</string>
+    <string name="inserisci_immagine_profilo">Inserisci immagine profilo</string>
+    <string name="crea_un_account_e_scegli_il_tuo_gruppo_casa">Crea un account e scegli il tuo gruppo casa</string>
+    <string name="crea">crea</string>
+    <string name="e_mail">E-mail</string>
+    <string name="userPic" />
+    <string name="NomeCasa" />
+    <string name="button_utenze" />
+    <string name="button_spese" />
+    <string name="button_turni" />
+    <string name="button_bacheca" />
 
 
 </resources>
