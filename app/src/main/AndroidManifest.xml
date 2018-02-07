@@ -57,7 +57,9 @@
         <activity
             android:name=".activity.UtenzeText"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.BachecaActivity"></activity>
+        <activity android:name=".activity.BachecaActivity"
+            android:screenOrientation="portrait"
+            android:label="Bacheca"></activity>
     </application>
 
 </manifest>

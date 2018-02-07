@@ -20,6 +20,7 @@
         android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
+        android:onClick="onClick4"
         android:text="BACHECA"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/buttonSpese"

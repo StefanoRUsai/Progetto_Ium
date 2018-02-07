@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onClick4(View view){
-        Intent intent = new  Intent(getBaseContext(), Login_principale.class);
+        Intent intent = new  Intent(getBaseContext(), BachecaActivity.class);
         startActivity(intent);
     }
 
