@@ -87,11 +87,15 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager= getFragmentManager();
         if (id == R.id.nav_casa) {
+            Intent searchIntent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(searchIntent);
 
-            // Handle the camera action
+            overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_personale) {
 
-
+            Intent searchIntent2 = new Intent(MainActivity.this, PersonalArea.class);
+            startActivity(searchIntent2);
+            overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
