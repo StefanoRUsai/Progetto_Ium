@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.st3.coinquiapp.activity.Login_principale">
+
+
+    <EditText
+
+        android:id="@+id/attrMail"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:focusedByDefault="false"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:scrollbars="none"
+        android:textColorLink="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/attrPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <EditText
+
+        android:id="@+id/attrPassword"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:scrollbars="none"
+        android:textColorLink="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLoginOriginal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attrMail" />
+
+    <Button
+        android:id="@+id/buttonLoginOriginal"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#73B3B3"
+        android:onClick="onClick10"
+        android:text="Login"
+        android:textColorLink="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLoginFacebook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attrPassword" />
+
+
+    <Button
+        android:id="@+id/buttonLoginFacebook"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="340dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#3B5998"
+        android:drawableStart="@mipmap/fbl"
+        android:onClick="onClick10"
+        android:text="Login with facebook"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLoginTwitter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLoginOriginal" />
+
+
+    <Button
+        android:id="@+id/buttonLoginTwitter"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#00ACED"
+        android:drawableStart="@mipmap/tw"
+        android:onClick="onClick10"
+        android:text="Login with twitter"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLoginGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLoginFacebook" />
+
+    <Button
+        android:id="@+id/buttonLoginGoogle"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#D34836"
+        android:drawableStart="@mipmap/goo"
+        android:onClick="onClick10"
+        android:text="Login with Google"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLoginTwitter" />
+
+    <TextView
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Or"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNewAccount"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLoginGoogle" />
+
+    <Button
+        android:id="@+id/buttonNewAccount"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#73B3B3"
+        android:text="Crea un account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

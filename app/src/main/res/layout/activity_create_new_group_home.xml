@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.st3.coinquiapp.activity.CreateNewGroupHome">
+
+    <EditText
+        android:id="@+id/textNewNameGroupHome"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:hint="Nome nel gruppo casa"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/attrPasswordHome"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="41dp"
+        android:hint="Password"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNewNameGroupHome" />
+
+    <EditText
+        android:id="@+id/attrPasswordHomeConfermed"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:hint="Coferma password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attrPasswordHome" />
+
+    <TextView
+        android:id="@+id/viewInputImmage"
+        android:layout_width="202dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="8dp"
+        android:text="Inserisci immagine \nprofilo del gruppo"
+        android:textAlignment="viewEnd"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attrPasswordHomeConfermed"
+        app:layout_constraintVertical_bias="0.264" />
+
+    <Button
+        android:id="@+id/nuovoGruppoCasaOk"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#73B3B3"
+        android:onClick="onClick8"
+        android:text="Crea il tuo gruppo casa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="73dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="52dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="45dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/nuovoGruppoCasaOk"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/viewInputImmage"
+        app:layout_constraintTop_toBottomOf="@+id/attrPasswordHomeConfermed"
+        app:layout_constraintVertical_bias="1.0"
+        app:rippleColor="@color/colorPrimaryDark"
+        app:srcCompat="@mipmap/ic_add_white" />
+
+
+</android.support.constraint.ConstraintLayout>

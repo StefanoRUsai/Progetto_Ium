@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.st3.coinquiapp.activity.Registrazione">
+
+
+    <EditText
+        android:id="@+id/inputNewEmail"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/e_mail"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,TextFields" />
+
+    <EditText
+        android:id="@+id/inputNewName"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/nome"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNewEmail"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/inputNewSurname"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/cognome"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNewName"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/inputNewPassword"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNewSurname"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/inputConfirmPassword"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:hint="Conferma password"
+        android:inputType="textPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNewPassword" />
+
+    <TextView
+        android:id="@+id/viewInputImmage"
+        android:layout_width="245dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/inserisci_immagine_profilo"
+        android:textAlignment="viewEnd"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/registrazioneOk"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+        app:layout_constraintTop_toBottomOf="@+id/inputConfirmPassword"
+        app:layout_constraintVertical_bias="0.405" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="73dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/registrazioneOk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/viewInputImmage"
+        app:layout_constraintTop_toBottomOf="@+id/inputConfirmPassword"
+        app:layout_constraintVertical_bias="0.8"
+        app:rippleColor="@color/colorPrimaryDark"
+        app:srcCompat="@mipmap/ic_add_white" />
+
+
+    <Button
+        android:id="@+id/registrazioneOk"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:background="#73B3B3"
+        android:onClick="onClick5"
+        android:text="@string/crea"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
