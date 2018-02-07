@@ -11,26 +11,27 @@
     <TextView
         android:id="@+id/textCercaGruppocASA"
         style="@style/TextAppearance.AppCompat"
-        android:layout_width="366dp"
+        android:layout_width="340dp"
         android:layout_height="26dp"
         android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:text="Cerca il tuo gruppo casa:"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/searchGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
         android:id="@+id/searchGroup"
-        android:layout_width="368dp"
+        android:layout_width="340dp"
         android:layout_height="46dp"
         android:layout_marginBottom="24dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:background="@color/colorPrimaryLight"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
@@ -41,7 +42,7 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="368dp"
+        android:layout_width="340dp"
         android:layout_height="46dp"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="8dp"
@@ -58,8 +59,8 @@
     <Button
         android:id="@+id/buttonWelcomeToHouse"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="368dp"
-        android:layout_height="43dp"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="37dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -88,7 +89,7 @@
     <Button
         android:id="@+id/buttonCreateNewGroupHome"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="368dp"
+        android:layout_width="340dp"
         android:layout_height="46dp"
         android:layout_marginBottom="67dp"
         android:layout_marginEnd="8dp"

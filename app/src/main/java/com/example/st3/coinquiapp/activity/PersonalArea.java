@@ -19,13 +19,13 @@ import android.view.MenuItem;
 
 import com.example.st3.coinquiapp.R;
 
-public class MainActivity extends AppCompatActivity
+public class PersonalArea extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.personal_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_personale);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -87,15 +87,16 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager= getFragmentManager();
         if (id == R.id.nav_casa) {
-            Intent searchIntent = new Intent(MainActivity.this, MainActivity.class);
+            Intent searchIntent = new Intent(PersonalArea.this, MainActivity.class);
             startActivity(searchIntent);
-
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_personale) {
 
-            Intent searchIntent2 = new Intent(MainActivity.this, PersonalArea.class);
-            startActivity(searchIntent2);
+            Intent searchIntent = new Intent(PersonalArea.this, PersonalArea.class);
+            startActivity(searchIntent);
+
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -114,12 +115,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onClick3(View view){
-        Intent intent = new  Intent(getBaseContext(), Spese.class);
+        Intent intent = new  Intent(getBaseContext(), SpesePersonali.class);
         startActivity(intent);
     }
 
     public void onClick4(View view){
-        Intent intent = new  Intent(getBaseContext(), BachecaActivity.class);
+        Intent intent = new  Intent(getBaseContext(), Login_principale.class);
         startActivity(intent);
     }
 

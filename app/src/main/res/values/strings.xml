@@ -33,6 +33,14 @@
     <string name="button_spese" />
     <string name="button_turni" />
     <string name="button_bacheca" />
+    <string name="aggiungi">Aggiungi</string>
+    <string name="prezzo">€...</string>
+    <string name="spesa">Spesa</string>
+    <string name="nuova_spesa">Nuova Spesa</string>
+    <string name="modifica">modifica</string>
+    <string name="totale_spese_annue">Totale spese annue</string>
+    <string name="aggiungi_spesa">Aggiungi Spesa</string>
+    <string name="_200_00">€ 200.00</string>
 
 
 </resources>

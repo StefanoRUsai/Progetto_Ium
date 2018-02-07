@@ -12,22 +12,20 @@
         <activity
             android:name=".activity.MainActivity"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.Turni"
             android:label="Turni"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SpesePersonali"
             android:label="Spese personali"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.Utenze"
             android:label="Utenze"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.Registrazione"
             android:label="Registrazione" />
@@ -36,32 +34,32 @@
             android:label="Gruppo-Casa" />
         <activity
             android:name=".activity.CreateNewGroupHome"
-            android:label="Crea nuovo Gruppo-Casa">
-
-        </activity>
-
+            android:label="Crea nuovo Gruppo-Casa"></activity>
         <activity
             android:name=".activity.Login_principale"
             android:label=""
             android:src="@mipmap/logo"
-            android:windowSoftInputMode="stateHidden">
-
-
-        </activity>
-
-
-        <activity android:name=".activity.SpashScreen"
-
-            android:theme="@style/Theme.Design.NoActionBar"
-            android:screenOrientation="portrait">
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".activity.Spese"
+            android:label="Spese"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.SpashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.UtenzeText"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.UtenzeText"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.BachecaActivity"
+            android:screenOrientation="portrait"
+            android:label="Bacheca"></activity>
     </application>
 
 </manifest>
