@@ -110,7 +110,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onClick3(View view){
-        Intent intent = new  Intent(getBaseContext(), SpesePersonali.class);
+        Intent intent = new  Intent(getBaseContext(), Spese.class);
+        startActivity(intent);
+    }
+
+    public void onClick4(View view){
+        Intent intent = new  Intent(getBaseContext(), Login_principale.class);
         startActivity(intent);
     }
 
