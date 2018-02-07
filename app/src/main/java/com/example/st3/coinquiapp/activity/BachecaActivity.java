@@ -12,6 +12,8 @@ import com.example.st3.coinquiapp.R;
 
 public class BachecaActivity extends AppCompatActivity {
 
+
+    int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,5 +53,6 @@ public class BachecaActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+
     }
 }
