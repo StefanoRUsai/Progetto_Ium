@@ -108,6 +108,7 @@ public class Utenze extends AppCompatActivity {
 
 
                         dialog.dismiss();
+                        Utenze.this.recreate();
 
                     }
                 });

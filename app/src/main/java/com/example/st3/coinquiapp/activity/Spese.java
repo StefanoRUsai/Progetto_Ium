@@ -110,6 +110,7 @@ public class Spese extends AppCompatActivity {
 
 
                         dialog.dismiss();
+                        Spese.this.recreate();
 
                     }
                 });
