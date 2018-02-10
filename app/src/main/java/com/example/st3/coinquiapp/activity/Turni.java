@@ -187,6 +187,7 @@ public class Turni extends AppCompatActivity {
             long times= currentTimestamp.getTime();
             listaTime.put(times, turnoStringa);
             Event eventNew = new Event(Color.BLUE, times, turnoStringa);
+
             listaEvent.add(eventNew);
             for(Event event: listaEvent){
                 compactCalendar.addEvent(event);
