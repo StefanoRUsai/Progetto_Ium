@@ -182,6 +182,9 @@ public class Turni extends AppCompatActivity {
         compactCalendar.addEvent(ev3);
         compactCalendar.addEvent(ev4);
 
+        for(Event event: listaEvent){
+            compactCalendar.addEvent(event);
+        }
 
         if(flag == true) {
             long times= currentTimestamp.getTime();
@@ -234,8 +237,6 @@ public class Turni extends AppCompatActivity {
 
 
         });
-
-
 
 
 
