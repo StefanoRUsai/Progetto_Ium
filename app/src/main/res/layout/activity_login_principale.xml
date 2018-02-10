@@ -121,12 +121,15 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonLoginTwitter" />
 
     <TextView
+        style="@style/TextAppearance.AppCompat"
+        android:textColor="@color/colorPrimaryDark"
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="16dp"
-        android:text="Or"
+        android:textSize="10pt"
+        android:text="Oppure"
         app:layout_constraintBottom_toTopOf="@+id/buttonNewAccount"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

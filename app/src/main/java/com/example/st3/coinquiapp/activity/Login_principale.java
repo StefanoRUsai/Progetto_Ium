@@ -35,11 +35,9 @@ public class Login_principale extends AppCompatActivity {
         getSupportActionBar().setIcon(R.drawable.coinquiapp_logo2 );
         //getSupportActionBar().setIcon(@drawable/my_logo);
         Button buttonSignIn = findViewById( R.id.buttonNewAccount );
-
         buttonSignIn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-
                 Intent intent = new Intent(getBaseContext(), Registrazione.class);
                 startActivity(intent);
             }

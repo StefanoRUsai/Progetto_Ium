@@ -60,8 +60,8 @@ public class ModificaProfilo extends AppCompatActivity {
     }
 
 
-    public void onClick5(View view){
-        Intent intent = new  Intent(getBaseContext(), ChoiseGroupHome.class);
+    public void onClick13(View view){
+        Intent intent = new  Intent(getBaseContext(), PersonalArea.class);
         startActivity(intent);
     }
 }

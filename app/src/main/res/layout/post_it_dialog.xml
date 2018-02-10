@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp">
+    android:orientation="vertical"
+    android:background="#EEE8AA"
+    android:padding="5dp"
+    >
 
     <TextView
-        android:text="Nuova Spesa"
+        android:text="Nuovo Post"
         android:layout_gravity="center"
-        android:id="@+id/text_titolo_spesa"
+        android:id="@+id/text_nuovo_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:textStyle="bold" />
 
-
     <EditText
-        android:id="@+id/spesa"
+        android:id="@+id/post_it_titolo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Spesa"
+        android:hint="titolo"
         android:layout_marginTop="10dp"
-        android:inputType="textPersonName"/>
+        android:inputType="text"/>
 
     <EditText
-        android:id="@+id/prezzo"
+        android:id="@+id/post_it_testo_da_inserire"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginTop="10dp"
-        android:hint="€..."
-        android:inputType="numberDecimal" />
+        android:hint="testo da inserire"
+        android:inputType="text" />
 
     <Button
         style="@style/Widget.AppCompat.Button.Colored"
-        android:id="@+id/aggiungi_spesa"
+        android:id="@+id/aggiungi_post_it"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Aggiungi spesa" />
+        android:text="Aggiungi post-it" />
 
 
 

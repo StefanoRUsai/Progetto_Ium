@@ -25,20 +25,20 @@
         android:layout_marginTop="10dp"
         android:inputType="textPersonName"/>
 
-    <EditText
+    <TextView
         android:id="@+id/data_turno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_marginTop="10dp"
-        android:hint="Data"
-        android:inputType="textPersonName" />
+        android:textSize="20dp"
+        android:hint="Inserisci la data"/>
 
     <Button
+        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/aggiungi_turno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Conferma" />
+        android:text="Aggiungi turno" />
 
 </LinearLayout>

@@ -113,7 +113,7 @@
             android:contentDescription="@string/userPic"
             android:scaleType="fitXY"
             app:layout_constraintTop_toBottomOf="@id/personal_area"
-            app:srcCompat="@drawable/circle" />
+            app:srcCompat="@drawable/coinquilini3" />
 
     </LinearLayout>
 

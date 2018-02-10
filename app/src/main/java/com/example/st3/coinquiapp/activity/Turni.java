@@ -1,16 +1,24 @@
 package com.example.st3.coinquiapp.activity;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.icu.util.Calendar;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,15 +27,35 @@ import android.widget.Toolbar;
 import com.example.st3.coinquiapp.R;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.TimeZone;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
+
 
 public class Turni extends AppCompatActivity {
 
-    CompactCalendarView compactCalendar;
+    private static CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
+    private static final String TAG = "Turni";
     TextView mese;
+    static String turnoStringa=null;
+    static  long time;
+    static Timestamp currentTimestamp;
+    EditText mTurno;
+    static boolean flag=false;
+    static Calendar cal;
+    static HashMap<Long, String> listaTime= new HashMap<>();
+    static boolean inizializzazione=true;
+    static ArrayList<Event> listaEvent = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,19 +77,67 @@ public class Turni extends AppCompatActivity {
             public void onClick(View view) {
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(Turni.this);
                 View mView = getLayoutInflater().inflate(R.layout.turni_dialog, null);
-                final EditText mTurno = (EditText) mView.findViewById(R.id.turno);
-                final EditText mData = (EditText) mView.findViewById(R.id.data_turno);
+                mTurno = (EditText) mView.findViewById(R.id.turno);
+                final TextView mData = (TextView) mView.findViewById(R.id.data_turno);
                 Button mButton = (Button) mView.findViewById(R.id.aggiungi_turno);
+
+
+                mData.setOnClickListener(new View.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void onClick(View view) {
+                        cal = Calendar.getInstance(android.icu.util.TimeZone.GMT_ZONE);
+                        int year = cal.get(Calendar.YEAR);
+                        int month = cal.get(Calendar.MONTH);
+                        int day = cal.get(Calendar.DAY_OF_MONTH);
+                        time= cal.get(Calendar.MILLISECONDS_IN_DAY);
+
+                        // 2) get a java.util.Date from the calendar instance.
+                        //    this date will represent the current instant, or "now".
+
+
+                        DatePickerDialog dialog = new DatePickerDialog(
+                                Turni.this,
+                                android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                                mDateSetListener,
+                                year,month,day);
+                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        dialog.show();
+                    }
+                });
+
+                mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        month = month + 1;
+                        Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
+
+                        String date = month + "/" + day + "/" + year;
+                        mData.setText(date);
+                        Date datal= new Date(date);
+
+                        currentTimestamp = new Timestamp(datal.getTime());
+                        turnoStringa=mTurno.getText().toString();
+
+
+                    }
+                };
+
 
 
                 mButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+
                         if(!mTurno.getText().toString().isEmpty() && !mData.getText().toString().isEmpty()){
+                            turnoStringa=mTurno.getText().toString();
                             Toast.makeText(Turni.this, R.string.check_aggiunto, Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(Turni.this, R.string.error_campi, Toast.LENGTH_SHORT).show();
                         }
+
 
                         Intent intent = new  Intent(view.getContext(), Turni.class);
                         startActivity(intent);
@@ -69,9 +145,12 @@ public class Turni extends AppCompatActivity {
                     }
                 });
 
+
+
                 mBuilder.setView(mView);
                 AlertDialog dialog = mBuilder.create();
                 dialog.show();
+                flag=true;
             }
         });
 
@@ -86,7 +165,6 @@ public class Turni extends AppCompatActivity {
         compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
 
-
         Event ev1 = new Event(Color.BLUE, 1517788800000L, "Turno piatti Alessandro");
         Event ev2 = new Event(Color.YELLOW, 1518048000000L, "Turno bagno Stefano");
         Event ev3 = new Event(Color.GREEN, 1518134400000L, "Turno pulizie corridoio Marta");
@@ -95,6 +173,20 @@ public class Turni extends AppCompatActivity {
         compactCalendar.addEvent(ev2);
         compactCalendar.addEvent(ev3);
         compactCalendar.addEvent(ev4);
+
+
+        if(flag == true) {
+            long times= currentTimestamp.getTime();
+            listaTime.put(times, turnoStringa);
+            Event eventNew = new Event(Color.BLUE, times, turnoStringa);
+            listaEvent.add(eventNew);
+            for(Event event: listaEvent){
+                compactCalendar.addEvent(event);
+            }
+        flag=false;
+        }
+
+
 
         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
@@ -114,39 +206,22 @@ public class Turni extends AppCompatActivity {
                             if (dateClicked.toString().compareTo("Thu Feb 08 00:00:00 GMT+00:00 2018") == 0) {
                                 Toast.makeText(context, "Turno cucina Giorgia", Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(context, "Non ci sono turni in questo momento", Toast.LENGTH_SHORT).show();
-                                AlertDialog.Builder mBuilder = new AlertDialog.Builder(Turni.this);
-                                View mView = getLayoutInflater().inflate(R.layout.turni_dialog, null);
-                                final EditText mTurno = (EditText) mView.findViewById(R.id.turno);
-                                final EditText mData = (EditText) mView.findViewById(R.id.data_turno);
-                                Button mButton = (Button) mView.findViewById(R.id.aggiungi_turno);
+                                if (listaTime.containsKey(dateClicked.getTime()) ){
+                                    Toast.makeText(context, listaTime.get(dateClicked.getTime()), Toast.LENGTH_SHORT).show();
+                                } else {
 
+                                    Toast.makeText(context, "Non ci sono turni in questo momento", Toast.LENGTH_SHORT).show();
+                                }
 
-                                mButton.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        if(!mTurno.getText().toString().isEmpty() && !mData.getText().toString().isEmpty()){
-                                            Toast.makeText(Turni.this, R.string.check_aggiunto, Toast.LENGTH_SHORT).show();
-                                        }else{
-                                            Toast.makeText(Turni.this, R.string.error_campi, Toast.LENGTH_SHORT).show();
-                                        }
-                                        Intent intent = new  Intent(view.getContext(), Turni.class);
-                                        startActivity(intent);
-                                    }
-                                });
-
-                                mBuilder.setView(mView);
-                                AlertDialog dialog = mBuilder.create();
-                                dialog.show();
                             }
                         }
                     }
                 }
             }
-                @Override
-                public void onMonthScroll (Date firstDayOfNewMonth){
-                    mese.setText(dateFormatMonth.format(firstDayOfNewMonth));
-                }
+            @Override
+            public void onMonthScroll (Date firstDayOfNewMonth){
+                mese.setText(dateFormatMonth.format(firstDayOfNewMonth));
+            }
 
 
         });

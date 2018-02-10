@@ -28,7 +28,8 @@
     <string name="crea">crea</string>
     <string name="e_mail">E-mail</string>
     <string name="userPic" />
-    <string name="NomeCasa" />
+    <string name="NomeCasa">Casa Via Molise 63</string>
+    <string name="NomeUtente">Genofeffa Cimosa</string>
     <string name="button_utenze" />
     <string name="button_spese" />
     <string name="button_turni" />
@@ -41,6 +42,8 @@
     <string name="totale_spese_annue">Totale spese annue</string>
     <string name="aggiungi_spesa">Aggiungi Spesa</string>
     <string name="_200_00">€ 200.00</string>
+    <string name="prova">,00</string>
+    <string name="zerozero">,00</string>
 
 
 </resources>

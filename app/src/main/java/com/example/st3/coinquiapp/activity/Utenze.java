@@ -85,7 +85,7 @@ public class Utenze extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
-        FloatingActionButton mShowDialog = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        FloatingActionButton mShowDialog = (FloatingActionButton) findViewById(R.id.floatingSpese2);
         mShowDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

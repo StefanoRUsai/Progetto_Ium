@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_main"
+    android:id="@+id/layout_personal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -11,7 +11,7 @@
 
 
     <Button
-        android:id="@+id/buttonBacheca"
+        android:id="@+id/buttonContratto"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="5dp"
@@ -20,17 +20,17 @@
         android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
-        android:onClick="onClick4"
-        android:text="BACHECA"
+        android:text="Contratto"
         android:textColor="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSpese"
-        app:layout_constraintEnd_toStartOf="@+id/buttonTurni"
+        app:layout_constraintBottom_toTopOf="@+id/buttonModificaProfilo"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSpesePersonali"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <Button
-        android:id="@+id/buttonTurni"
+        android:id="@+id/buttonSpesePersonali"
         style="@style/Widget.AppCompat.Button.Borderless"
+        android:onClick="onClick11"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="5dp"
@@ -39,17 +39,18 @@
         android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
-        android:onClick="onClick1"
-        android:text="TURNI"
+        android:text="SPESE PERSONALI"
         android:textColor="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/buttonUtenze"
+        app:layout_constraintBottom_toTopOf="@+id/buttonUscitaCasa"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonBacheca"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintStart_toEndOf="@+id/buttonContratto"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 
     <Button
-        android:id="@+id/buttonSpese"
+        android:id="@+id/buttonModificaProfilo"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:onClick="onClick12"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
@@ -58,16 +59,15 @@
         android:layout_marginTop="5dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
-        android:onClick="onClick3"
-        android:text="SPESE"
+        android:text="MODIFICA PROFILO"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonUtenze"
+        app:layout_constraintEnd_toStartOf="@+id/buttonUscitaCasa"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonBacheca" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonContratto" />
 
     <Button
-        android:id="@+id/buttonUtenze"
+        android:id="@+id/buttonUscitaCasa"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
@@ -76,16 +76,15 @@
         android:layout_marginTop="5dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
-        android:onClick="onClick2"
-        android:text="UTENZE"
+        android:text="ESCI DAL GRUPPO-CASA"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonSpese"
-        app:layout_constraintTop_toBottomOf="@+id/buttonTurni" />
+        app:layout_constraintStart_toEndOf="@+id/buttonModificaProfilo"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSpesePersonali" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -98,14 +97,14 @@
             android:layout_gravity="center_vertical"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/NomeCasa"
+            android:text="@string/NomeUtente"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="30sp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/userPic"
+            android:id="@+id/userPic2"
             android:layout_width="220dp"
             android:layout_height="220dp"
             android:layout_gravity="center_vertical|center_horizontal"
@@ -113,8 +112,6 @@
             android:contentDescription="@string/userPic"
             android:scaleType="fitXY"
             app:layout_constraintTop_toBottomOf="@id/personal_area"
-            app:srcCompat="@drawable/circle" />
-
+            app:srcCompat="@drawable/circle"/>
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>

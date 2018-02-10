@@ -27,6 +27,9 @@
             android:name=".activity.SpesePersonali"
             android:label="Spese personali"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.ModificaProfilo"
+            android:label="Modifica profilo"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.Utenze"
             android:label="Utenze"

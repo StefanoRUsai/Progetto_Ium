@@ -1,11 +1,18 @@
 package com.example.st3.coinquiapp.activity;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.example.st3.coinquiapp.R;
@@ -22,6 +29,38 @@ public class BachecaActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+        FloatingActionButton mShowDialog = (FloatingActionButton) findViewById(R.id.floatingAggiungiPost);
+        mShowDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(BachecaActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.post_it_dialog, null);
+                final EditText mTitolo_post_it = (EditText) mView.findViewById(R.id.post_it_titolo);
+                final EditText mTesto_post_it = (EditText) mView.findViewById(R.id.post_it_testo_da_inserire);
+                Button mButton = (Button) mView.findViewById(R.id.aggiungi_post_it);
+
+
+                mButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(!mTitolo_post_it.getText().toString().isEmpty() && !mTesto_post_it.getText().toString().isEmpty()){
+                            Toast.makeText(BachecaActivity.this, R.string.check_aggiunto, Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(BachecaActivity.this, R.string.error_campi, Toast.LENGTH_SHORT).show();
+                        }
+
+                        Intent intent = new  Intent(view.getContext(), BachecaActivity.class);
+                        startActivity(intent);
+
+                    }
+                });
+
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
+            }
+        });
     }
 
     private void setSupportActionBar(Toolbar toolbar) {

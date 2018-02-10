@@ -35,10 +35,11 @@
         android:inputType="textPersonName" />
 
     <Button
+        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/aggiungi_utenza"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Conferma" />
+        android:text="Aggiunti utenza" />
 
 </LinearLayout>

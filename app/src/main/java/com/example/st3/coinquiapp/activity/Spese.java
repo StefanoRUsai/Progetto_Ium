@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -21,14 +22,21 @@ import com.example.st3.coinquiapp.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Spese extends AppCompatActivity {
-
+    private static TextView totale;
     private ListView listaS;
     private ArrayAdapter<String> listAdapter;
-    private HashMap<String, String> stringHashMap = new HashMap<>();
+    private static LinkedHashMap<String, String> stringHashMap = new LinkedHashMap<String, String>(){
+        { put("Scottex", "2,50€");
+        put("Bombola cucina","22,30 €");
+        put("Detersivo piatti","1,00 €");
+        put("Tovaglia","11,00 €");}
+    };
+    private static float totalefloat = 35.80f;
 
 
     @Override
@@ -43,11 +51,10 @@ public class Spese extends AppCompatActivity {
         }
 
         listaS = (ListView) findViewById(R.id.listViewSpesePersonali);
+        totale = (TextView) findViewById(R.id.spesetotale);
 
-        stringHashMap.put("Scottex", "2,50€");
-        stringHashMap.put("Bombola cucina","22,30 €");
-        stringHashMap.put("Detersivo piatti","1,00 €");
-        stringHashMap.put("Tovaglia","11,00 €");
+
+
 
         List<HashMap<String, String>> listItems = new ArrayList<>();
         SimpleAdapter adapter= new SimpleAdapter(this, listItems, R.layout.layoutlistasp,
@@ -63,7 +70,8 @@ public class Spese extends AppCompatActivity {
             resultsMap.put("Second", pair.getValue().toString());
             listItems.add(resultsMap);
         }
-
+      
+        totale.setText(String.valueOf((Float)totalefloat)+" €");
         listaS.setAdapter(adapter);
 
 
@@ -75,13 +83,25 @@ public class Spese extends AppCompatActivity {
                 View mView = getLayoutInflater().inflate(R.layout.spesec_dialog, null);
                 final EditText mSpesa = (EditText) mView.findViewById(R.id.spesa);
                 final EditText mPrezzo = (EditText) mView.findViewById(R.id.prezzo);
-               Button mButton = (Button) mView.findViewById(R.id.aggiungi_spesa);
+                Button mButton = (Button) mView.findViewById(R.id.aggiungi_spesa);
 
 
                 mButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        String prezzo = null;
                         if(!mSpesa.getText().toString().isEmpty() && !mPrezzo.getText().toString().isEmpty()){
+                            if (!(mPrezzo.getText().toString().contains(",")) && !(mPrezzo.getText().toString().contains("."))){
+                                prezzo= mPrezzo.getText().toString()+",00";
+
+                            }
+                            if (mPrezzo.getText().toString().contains(".")){
+                                prezzo= mPrezzo.getText().toString();
+                                prezzo.replace(".", ",");
+
+                            }
+                            totalefloat+=Float.parseFloat(mPrezzo.getText().toString());
+                            stringHashMap.put(mSpesa.getText().toString(),prezzo+" €");
                             Toast.makeText(Spese.this, R.string.check_aggiunto, Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(Spese.this, R.string.error_campi, Toast.LENGTH_SHORT).show();
