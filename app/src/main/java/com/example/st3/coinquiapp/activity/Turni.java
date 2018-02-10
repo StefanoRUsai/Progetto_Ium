@@ -115,8 +115,10 @@ public class Turni extends AppCompatActivity {
                         month = month + 1;
                         Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
 
-                        String date = day + "/" + month + "/" + year;
-                        mData.setText(date);
+                        String date = month + "/" + day + "/" + year;
+
+                        String dateIt = day + "/" + month + "/" + year;
+                        mData.setText(dateIt);
                         Date datal= new Date(date);
 
                         currentTimestamp = new Timestamp(datal.getTime());
