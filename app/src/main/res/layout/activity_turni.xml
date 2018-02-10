@@ -15,7 +15,7 @@
         android:layout_marginTop="65dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        app:compactCalendarBackgroundColor="@color/white"
+        app:compactCalendarBackgroundColor="#00000000"
         app:compactCalendarCurrentDayBackgroundColor="@color/colorPrimaryDark"
         app:compactCalendarCurrentSelectedDayBackgroundColor="@color/trasparent"
         app:compactCalendarMultiEventIndicatorColor="@color/prova"
