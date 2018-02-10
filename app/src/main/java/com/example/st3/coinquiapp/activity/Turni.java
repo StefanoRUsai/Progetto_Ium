@@ -193,17 +193,17 @@ public class Turni extends AppCompatActivity {
             public void onDayClick(Date dateClicked) {
                 Context context = getApplicationContext();
 
-                if (dateClicked.getTime() == 1517788800000L) {
+                if (dateClicked.getTime() == 1517785200000L) {
                     Toast.makeText(context, "Turno piatti Alessandro", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (dateClicked.getTime() == 1518134400000L) {
+                    if (dateClicked.getTime() == 1518044400000L) {
                         Toast.makeText(context, "Turno bagno Stefano", Toast.LENGTH_SHORT).show();
                     } else {
 
-                        if (dateClicked.getTime() == 1518048000000L)  {
+                        if (dateClicked.getTime() == 1518130800000L)  {
                             Toast.makeText(context, "Turno pulizie corridoio Marta", Toast.LENGTH_SHORT).show();
                         } else {
-                            if (dateClicked.getTime() == 1518220800000L) {
+                            if (dateClicked.getTime() == 1518217200000L) {
                                 Toast.makeText(context, "Turno cucina Giorgia", Toast.LENGTH_SHORT).show();
                             } else {
                                 if (listaTime.containsKey(dateClicked.getTime()) ){
