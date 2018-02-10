@@ -84,7 +84,8 @@ public class Spese extends AppCompatActivity {
                 final EditText mSpesa = (EditText) mView.findViewById(R.id.spesa);
                 final EditText mPrezzo = (EditText) mView.findViewById(R.id.prezzo);
                 Button mButton = (Button) mView.findViewById(R.id.aggiungi_spesa);
-
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
 
                 mButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -107,14 +108,13 @@ public class Spese extends AppCompatActivity {
                             Toast.makeText(Spese.this, R.string.error_campi, Toast.LENGTH_SHORT).show();
                         }
 
-                        Intent intent = new  Intent(view.getContext(), Spese.class);
-                        startActivity(intent);
+
+                        dialog.dismiss();
 
                     }
                 });
 
-                mBuilder.setView(mView);
-                AlertDialog dialog = mBuilder.create();
+
                 dialog.show();
             }
         });

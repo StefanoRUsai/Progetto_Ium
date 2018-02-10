@@ -71,15 +71,17 @@ public class Turni extends AppCompatActivity {
         String meseAttuale = dateFormatMonth.format(new Date());
         mese.setText(meseAttuale);
 
-        FloatingActionButton mShowDialog = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
+        final FloatingActionButton mShowDialog = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
         mShowDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder mBuilder = new AlertDialog.Builder(Turni.this);
+                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(Turni.this);
                 View mView = getLayoutInflater().inflate(R.layout.turni_dialog, null);
                 mTurno = (EditText) mView.findViewById(R.id.turno);
                 final TextView mData = (TextView) mView.findViewById(R.id.data_turno);
                 Button mButton = (Button) mView.findViewById(R.id.aggiungi_turno);
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
 
 
                 mData.setOnClickListener(new View.OnClickListener() {
@@ -96,13 +98,13 @@ public class Turni extends AppCompatActivity {
                         //    this date will represent the current instant, or "now".
 
 
-                        DatePickerDialog dialog = new DatePickerDialog(
+                        DatePickerDialog dialogDate = new DatePickerDialog(
                                 Turni.this,
                                 android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                                 mDateSetListener,
                                 year,month,day);
-                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                        dialog.show();
+                        dialogDate.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        dialogDate.show();
                     }
                 });
 
@@ -139,19 +141,23 @@ public class Turni extends AppCompatActivity {
                         }
 
 
-                        Intent intent = new  Intent(view.getContext(), Turni.class);
-                        startActivity(intent);
+
+                        dialog.dismiss();
+
 
                     }
                 });
 
 
 
-                mBuilder.setView(mView);
-                AlertDialog dialog = mBuilder.create();
+
                 dialog.show();
+
                 flag=true;
+
             }
+
+
         });
 
         // add back arrow to toolbar

@@ -36,7 +36,7 @@ public class Utenze extends AppCompatActivity {
     private static  HashMap<String, String> stringHashMap= new HashMap<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_utenze);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -94,7 +94,8 @@ public class Utenze extends AppCompatActivity {
                 final EditText mUtenza = (EditText) mView.findViewById(R.id.utenza);
                 final EditText mData = (EditText) mView.findViewById(R.id.data);
                 Button mButton = (Button) mView.findViewById(R.id.aggiungi_utenza);
-
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
 
                 mButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -105,14 +106,13 @@ public class Utenze extends AppCompatActivity {
                             Toast.makeText(Utenze.this, R.string.error_campi, Toast.LENGTH_SHORT).show();
                         }
 
-                        Intent intent = new  Intent(view.getContext(), Utenze.class);
-                        startActivity(intent);
+
+                        dialog.dismiss();
 
                     }
                 });
 
-                mBuilder.setView(mView);
-                AlertDialog dialog = mBuilder.create();
+
                 dialog.show();
             }
         });
